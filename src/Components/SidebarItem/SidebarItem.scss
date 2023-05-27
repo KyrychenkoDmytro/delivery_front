@@ -1,0 +1,31 @@
+.SidebarItem {
+    height: 220px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 30px;
+    transform: scale(1);
+    cursor: pointer;
+    transition: all .3s ease;
+    color: #fff;
+
+    &.active {
+        transform: scale(1.1);
+        color: gold;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        color: gold;
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+
+        h3 {
+            font-size: 28px;
+            font-weight: 500;
+        }
+    }
+}

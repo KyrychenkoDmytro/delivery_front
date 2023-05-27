@@ -1,0 +1,35 @@
+.PageNotFound {
+    padding: 203px 0;
+
+    &__wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__info {
+        flex: 0 1 max-content;
+        padding-left: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    &__info-img {
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__text {
+        margin-bottom: 20px;
+    }
+
+    &__btn {
+        margin-right: auto;
+    }
+
+}

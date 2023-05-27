@@ -1,0 +1,36 @@
+@import '../../scss/variables';
+
+.Header {
+    padding: 0;
+    background-color: $lightGray;
+
+    &__wrap {
+        max-width: 1680px;
+        padding: 0 40px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 26px;
+
+        li {
+            line-height: 26px;
+
+            a {
+                padding: 8px 12px;
+                font-size: 20px;
+                line-height: 24px;
+                font-weight: 700;
+                font-family: 'Roboto', sans-serif;
+                color: $darkSlateGray;
+            }
+        }
+    }
+}

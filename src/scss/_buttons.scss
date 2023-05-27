@@ -1,0 +1,40 @@
+.btn {
+    @extend %btn;
+
+    &::after {
+        content: "";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 19px;
+        height: 19px;
+        border-radius: 50%;
+        background: no-repeat center center url(../../public/img/icons/btn-arrow.svg) #335B6B;
+        cursor: pointer;
+    }
+}
+
+.btn_khaki {
+    background-color: $khaki;
+    color: $darkSlateGray;
+}
+
+.btn_gray {
+    background-color: $darkSlateGray;
+    color: #fff;
+}
+
+.btn_white {
+    background-color: #fff;
+    border: 2px solid $darkSlateGray;
+}
+
+.btn_pagination-grey {
+    background-color: $darkSlateGray;
+    color: #fff;
+    padding: 20px 60px;
+
+    &::after {
+        content: none;
+    }
+}

@@ -1,0 +1,25 @@
+@import './scss/fonts';
+@import './scss/variables';
+@import './scss/buttons';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: $darkSlateGray;
+  background-color: $lightGray;
+}
+
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

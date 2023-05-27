@@ -1,0 +1,12 @@
+@import '../../scss/variables';
+
+.Home {
+    padding: 20px;
+    background-color: $lightGray;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 30px;
+    }
+}

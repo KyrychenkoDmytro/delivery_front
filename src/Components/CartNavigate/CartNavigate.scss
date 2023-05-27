@@ -1,0 +1,40 @@
+@import '../../scss/variables';
+
+.CartNavigate {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 66px;
+    flex: 0 1 160px;
+    padding: 5px 15px 5px 6px;
+    border-radius: 36px;
+    border: 2px solid $darkSlateGray;
+
+    &__button {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $darkSlateGray;
+        border: none;
+        cursor: pointer;
+        @include noselect();
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 22px;
+            background: no-repeat 44% center url(../../../public/img/icons/cart.svg);
+        }
+    }
+
+    &__name {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+        font-family: 'Roboto', sans-serif;
+    }
+}

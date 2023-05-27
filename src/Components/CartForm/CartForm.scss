@@ -1,0 +1,70 @@
+@import '../../scss/variables';
+
+.CartForm {
+    padding: 40px 30px;
+    height: calc(100vh - 160px);
+    background-color: #fff;
+    box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    overflow: auto;
+
+    &__wrap {
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    &__label {
+        margin-bottom: 10px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+        color: $darkSlateGray;
+    }
+
+    &__input {
+        height: 68px;
+
+        input {
+            padding: 12px 22px;
+            height: inherit;
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid $darkSeaGreen;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 22px;
+            color: #ABABAB;
+        }
+    }
+
+    &__message-wrap {
+        flex: 0 1 100%;
+    }
+
+    &__btn-confirm {
+        margin-left: auto;
+        width: max-content;
+        margin-top: 20px;
+        transition: background-color .3s ease;
+
+        &:focus {
+            background-color: $khaki;
+        }
+    }
+
+    &__total {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        font-size: 32px;
+        font-weight: 700;
+    }
+}

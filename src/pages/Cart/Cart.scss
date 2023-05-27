@@ -1,0 +1,12 @@
+@import '../../scss/variables';
+
+.Cart {
+    padding: 20px;
+    background-color: $lightGray;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 30px;
+    }
+}

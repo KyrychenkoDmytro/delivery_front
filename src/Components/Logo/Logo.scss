@@ -1,0 +1,26 @@
+@import '../../scss/variables';
+
+.Logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 1 202px;
+
+    &__img-wrap {
+        height: 54px;
+
+        img {
+            display: block;
+            width: auto;
+            height: inherit;
+        }
+    }
+
+    &__name {
+        font-size: 38px;
+        line-height: 45px;
+        font-weight: 700;
+        font-family: 'Roboto', sans-serif;
+        color: $darkSlateGray;
+    }
+}
