@@ -1,9 +1,14 @@
 import './HistoryOfOrders.scss';
 import { useEffect, useState } from "react";
 import axios from '../../axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { addProductsToLocalStorage } from '../../redux/slices/cart';
 
 const HistoryOfOrders = () => {
+    const dispatch = useDispatch();
+    const { allProducts } = useSelector(state => state.cart);
     const [orders, setOrders] = useState([]);
+
     useEffect(() => {
         const fetchData = async () => {
             const { data } = await axios.get('/orders');
@@ -11,6 +16,18 @@ const HistoryOfOrders = () => {
         }
         fetchData();
     }, []);
+
+    useEffect(() => {
+        const items = localStorage.getItem('items');
+        if (items) {
+            dispatch(addProductsToLocalStorage(JSON.parse(items)))
+        }
+    }, [dispatch]);
+
+    useEffect(() => {
+            localStorage.setItem('items', JSON.stringify(allProducts));
+    }, [allProducts]);
+
     return (
         <div className="HistoryOfOrders">
             <div className="HistoryOfOrders__container">
