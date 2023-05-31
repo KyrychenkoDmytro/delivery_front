@@ -1,7 +1,7 @@
 import './SidebarItem.scss';
 
 const SidebarItem = (props) => {
-    const { onClick, isActive, name } = props;
+    const { onClick, isActive, isShopActiveInCart, name } = props;
     const storeName = {
         burger: "Mc Donny",
         pizza: "King Pizza",
@@ -14,15 +14,15 @@ const SidebarItem = (props) => {
     }
 
     return (
-        <section
-            className={isActive ? "SidebarItem active" : "SidebarItem"}
+        <div
+            className={isActive ? `SidebarItem ${isShopActiveInCart} active` : `SidebarItem ${isShopActiveInCart}`}
             style={{ background: `no-repeat center center / cover url(${storeUrl[name]})` }}
             onClick={() => onClick()}
         >
             <div className="SidebarItem__wrap">
                 <h3>{storeName[name]}</h3>
             </div>
-        </section>
+        </div>
     );
 }
 

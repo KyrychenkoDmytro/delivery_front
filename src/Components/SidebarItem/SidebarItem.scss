@@ -7,18 +7,28 @@
     cursor: pointer;
     transition: all .3s ease;
     color: #fff;
+    border: 3px solid darkSlateGray;
+    user-select: none;
 
     &.active {
         transform: scale(1.1);
         color: gold;
+        border: 3px solid gold;
     }
 
     &:hover {
         transform: scale(1.1);
         color: gold;
+        border: 3px solid gold;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: .6;
     }
 
     &__wrap {
+        height: inherit;
         display: flex;
         justify-content: center;
         padding: 20px;

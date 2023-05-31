@@ -1,8 +1,9 @@
 import './MenuListItem.scss';
 import { useDispatch } from 'react-redux';
-import { addProductToCart } from '../../redux/slices/cart';
+import { addProductToCart, setActiveShopInCart } from '../../redux/slices/cart';
 
-const MenuListItem = (props) => {    const { id, category, name, imageUrl, price, discount, rank } = props;
+const MenuListItem = (props) => {
+    const { id, category, name, imageUrl, price, discount, rank } = props;
     const dispatch = useDispatch();
     let newPrice;
     if (discount) {
@@ -18,7 +19,14 @@ const MenuListItem = (props) => {    const { id, category, name, imageUrl, price
             discount,
             count: 1,
         };
+
+        const shopStatus = {
+            status: true,
+            name: id
+        }
+
         dispatch(addProductToCart(product));
+        dispatch(setActiveShopInCart(shopStatus));
     }
 
     return (

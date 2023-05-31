@@ -28,8 +28,21 @@ const calcDiscount = (state) => {
         }, 0);
 }
 
+const isProductsEmpty = (state) => {
+    if (state.allProducts.length < 1) {
+        state.isShopActiveInCart = {
+            status: false,
+            name: ''
+        }
+    }
+}
+
 const initialState = {
     allProducts: [],
+    isShopActiveInCart: {
+        status: false,
+        name: ''
+    },
     countProducts: 0,
     totalCost: 0,
     discount: 0
@@ -60,6 +73,7 @@ const cartSlice = createSlice({
             calcCoutProduct(state);
             calcTotalCost(state);
             calcDiscount(state);
+            isProductsEmpty(state);
         },
         removeProduct: (state, action) => {
             state.allProducts = state.allProducts.filter((item) => item.id !== action.payload);
@@ -67,12 +81,17 @@ const cartSlice = createSlice({
             calcCoutProduct(state);
             calcTotalCost(state);
             calcDiscount(state);
+            isProductsEmpty(state);
         },
         clearAllInCartSlice: (state) => {
             state.allProducts = [];
             state.countProducts = 0;
             state.totalCost = 0;
             state.discount = 0;
+            state.isShopActiveInCart = {
+                status: false,
+                name: ''
+            }
         },
         addProductsToLocalStorage: (state, action) => {
             state.allProducts = action.payload;
@@ -80,10 +99,13 @@ const cartSlice = createSlice({
             calcCoutProduct(state);
             calcTotalCost(state);
             calcDiscount(state);
+        },
+        setActiveShopInCart: (state, action) => {
+            state.isShopActiveInCart = action.payload;
         }
     }
 })
 
-export const { addProductToCart, changeCountProduct, removeProduct, clearAllInCartSlice, addProductsToLocalStorage } = cartSlice.actions;
+export const { addProductToCart, changeCountProduct, removeProduct, clearAllInCartSlice, addProductsToLocalStorage, setActiveShopInCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
